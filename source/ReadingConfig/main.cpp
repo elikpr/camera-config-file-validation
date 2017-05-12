@@ -105,34 +105,42 @@ int main()
 		std::cout << "starts to record video\n";
 	}
 
+	std::getchar();
 	return 0;
 }
 
 Config read_config(const char file[])
 {
 	Config c;
-
+	
 	std::ifstream fin(file);
 
 	if (fin.fail()) return c;
-
+	
 	std::string name;
 	int value;
 
 	while (!fin.eof())
 	{
-		fin >> name >> value;
+		//fin >> name >> value; 
+		if (fin >> name >> value) {
 
-		if (name == "video_file_input")      c.video_file_input = value;
-		else if (name == "console")               c.console = value;
-		else if (name == "save_video")            c.save_video = value;
-		else if (name == "record_video")          c.record_video = value;
-		else if (name == "batting_trajectories")  c.batting_trajectories = value;
-		else if (name == "batting_animation")     c.batting_animation = value;
-		else if (name == "images")                c.images = value;
-		else if (name == "foreground")            c.foreground = value;
-		else if (name == "pitching_trajectories") c.pitching_trajectories = value;
-		else if (name == "pitching_animation")    c.pitching_animation = value;
+			if (name == "video_file_input") { c.video_file_input = value; std::cout << "video_file_input\n"; }
+			else if (name == "console") { c.console = value; std::cout << "console\n"; }
+			else if (name == "save_video") { c.save_video = value; std::cout << "save_video\n"; }
+			else if (name == "record_video") { c.record_video = value; std::cout << "record_video\n"; }
+			else if (name == "batting_trajectories")  c.batting_trajectories = value;
+			else if (name == "batting_animation")     c.batting_animation = value;
+			else if (name == "images")                c.images = value;
+			else if (name == "foreground")            c.foreground = value;
+			else if (name == "pitching_trajectories") c.pitching_trajectories = value;
+			else if (name == "pitching_animation")    c.pitching_animation = value;
+		}
+		else
+		{
+			std::cerr << "Wrong parameter input: " << file << " " << name << std::endl;
+			break;
+		}
 	}
 
 	fin.close();
