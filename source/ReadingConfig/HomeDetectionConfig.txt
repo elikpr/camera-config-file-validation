@@ -1,0 +1,10 @@
+video_file_input	1
+console			1
+save_video		0
+record_video		0
+batting_trajectories	1
+batting_animation	1
+images			1
+foreground		1
+pitching_trajectories	0
+pitching_animation	0

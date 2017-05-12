@@ -1,0 +1,10 @@
+Brightness=10
+Contrast=10
+Saturation=5
+Sharpness=1
+Gamma=180
+WhiteBalance=6500
+Backlightcom=0
+Gain=32
+PowerlineFrequency=2
+Exposure=-5
