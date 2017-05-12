@@ -17,7 +17,7 @@ struct Config
 	int pitching_trajectories = 0;
 	int pitching_animation = 0;
 };
-//Function declarations
+// Function declarations
 Config read_config(const char file[]);
 
 void read_device_numbers(const char file_in_device_numbers[], int &camT, int &camR, int &camL);
